@@ -24,8 +24,8 @@ fi
 
 if [ -n "$tag" ]; then
     ./sbt "set Base.dockerRegistry in (linkerd, Bundle) := \"${tag}\"" "set Base.dockerRegistry in (linkerd, Bundle) := \"${registry}\"" "linkerd/bundle:${docker_target}" \
-          "set Base.dockerTag in (namerd, Bundle) := \"${tag}\"" "set Base.dockerRegistry in (linkerd, Bundle) := \"${registry}\"" "namerd/bundle:${docker_target}" \
-          "set Base.dockerTag in (namerd, Dcos) := \"dcos-${tag}\"" "set Base.dockerRegistry in (linkerd, Bundle) := \"${registry}\"" "namerd/dcos:${docker_target}"
+          "set Base.dockerTag in (namerd, Bundle) := \"${tag}\"" "set Base.dockerRegistry in (namerd, Bundle) := \"${registry}\"" "namerd/bundle:${docker_target}" \
+          "set Base.dockerTag in (namerd, Dcos) := \"dcos-${tag}\"" "set Base.dockerRegistry in (namerd, Dcos) := \"${registry}\"" "namerd/dcos:${docker_target}"
 else
   ./sbt "linkerd/bundle:${docker_target}" \
         "namerd/bundle:${docker_target}" \
