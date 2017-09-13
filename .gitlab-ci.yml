@@ -48,4 +48,5 @@ compile:
     paths:
       # - "admin/src/main/resources/io/buoyant/admin/node_modules"
       # - bin/
-      - release.env
+      - echo "registry.cncf.ci/linkerd/linkerd/namerd:-dcos-${IMAGE_TAG}" > release.env
+      - cat release.env
