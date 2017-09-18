@@ -43,6 +43,7 @@ compile:
     - touch release.env
     - echo "registry.cncf.ci/linkerd/linkerd/namerd:-dcos-${IMAGE_TAG}" > release.env
     - echo "registry.cncf.ci/linkerd/linkerd/namerd:${IMAGE_TAG}" > release.env
+    - echo "registry.cncf.ci/linkerd/linkerd/linkerd:${IMAGE_TAG}" > release.env
     - cat release.env
 
   artifacts:
